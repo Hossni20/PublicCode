@@ -1,0 +1,6 @@
+[package]
+name = "c_and_html_et_laTex"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
