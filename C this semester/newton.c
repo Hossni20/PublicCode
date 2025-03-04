@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <math.h>
 
-// Function f(x) = x^2 + cos(x)
+// Function f(x) = x - cos(x)
 double f(double x) {
-    return x * x + cos(x);
+    return x - cos(x);
 }
 
-// Derivative of f(x), f'(x) = 2x - sin(x)
+// Derivative of f(x), f'(x) = 1 + sin(x)
 double df(double x) {
-    return 2 * x - sin(x);
+    return 1 + sin(x);
 }
 
 // Newton's Method for finding the root of f(x) = 0
