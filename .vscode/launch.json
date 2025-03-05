@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "HelloWorld",
+      "request": "launch",
+      "mainClass": "HelloWorld",
+      "projectName": "c_and_html_et_latex_77d858b9"
+    },
+    {
+      "type": "java",
       "name": "javatest",
       "request": "launch",
       "mainClass": "javatest",

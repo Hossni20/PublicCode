@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 int* sommeTableax(int taille, int* tab1, int* tab2){
     int* res = (int*)malloc(taille*sizeof(int));
     for(int i=0;i<taille;i++){
@@ -14,6 +16,14 @@ int main(){
     int* tab2 = (int*)malloc(taille*sizeof(int));
 
     //after filling the tables
+    for(int i=0;i<taille;i++){
+        scanf("%d",&tab1[i]);
+    }
+
+    for(int i=0;i<taille;i++){
+        scanf("%d",&tab2[i]);
+    }
+
     int* res = sommeTableax(tab1,tab2,taille);
     
     for(int i=0;i<taille;i++){
