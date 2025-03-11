@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main() {
     int n, i;
-    printf("Entrez la valeur de n : ");
+    printf("Entrez la valeur de n :\n");
     scanf("%d", &n);
     if (n == 0) {
         printf("Le %d-ième terme de Fibonacci est : 0\n", n);

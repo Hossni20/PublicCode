@@ -21,7 +21,7 @@ double newton_method(double initial_guess, double tolerance, int max_iterations)
         double dfx = df(x);
         
         if (fabs(fx) < tolerance) {
-            printf("Converged after %d iterations\n", iteration);
+            printf("\nConverged after %d iterations\n", iteration);
             return x;
         }
         
