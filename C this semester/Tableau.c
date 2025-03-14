@@ -1,38 +1,54 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int* sommeTableax(int taille, int* tab1, int* tab2){
-    int* res = (int*)malloc(taille*sizeof(int));
-    for(int i=0;i<taille;i++){
-        res[i]=tab1[i]+tab2[i];
+int *sommeTableaux(int taille, int *tab1, int *tab2) {
+    int *res = (int*)malloc(taille * sizeof(int));
+    if (res == NULL) {
+        printf("Erreur d'allocation mémoire\n");
+        exit(EXIT_FAILURE);
     }
-    return res; //it returns a table of [taille]
+
+    for (int i = 0; i < taille; i++) {
+        res[i] = tab1[i] + tab2[i];
+    }
+    return res;
 }
-int main(){
+
+int main() {
     int taille;
-    scanf("%d",&taille); //enter the size of table
+    scanf("%d", &taille); // Entrer la taille des tableaux
 
-    int* tab1 = (int*)malloc(taille*sizeof(int));
-    int* tab2 = (int*)malloc(taille*sizeof(int));
+    int *tab1 = (int*)malloc(taille * sizeof(int));
+    int *tab2 = (int*)malloc(taille * sizeof(int));
 
-    //after filling the tables
-    for(int i=0;i<taille;i++){
-        scanf("%d",&tab1[i]);
+    if (tab1 == NULL || tab2 == NULL) {
+        printf("Erreur d'allocation mémoire\n");
+        free(tab1);
+        free(tab2);
+        return EXIT_FAILURE;
     }
 
-    for(int i=0;i<taille;i++){
-        scanf("%d",&tab2[i]);
+    // Remplissage des tableaux
+    for (int i = 0; i < taille; i++) {
+        scanf("%d", &tab1[i]);
     }
 
-    int* res = sommeTableax(tab1,tab2,taille);
-    
-    for(int i=0;i<taille;i++){
-        printf("%d",res[i]); //printing out the results
+    for (int i = 0; i < taille; i++) {
+        scanf("%d", &tab2[i]);
+    }
+
+    int *res = sommeTableaux(taille, tab1, tab2); // Correction de l'appel de la fonction
+
+    // Affichage du résultat
+    for (int i = 0; i < taille; i++) {
+        printf("%d", res[i]);
     }
     printf("\n");
 
+    // Libération de la mémoire
     free(tab1);
     free(tab2);
-    free(taille);
+    free(res);
+
     return 0;
 }
