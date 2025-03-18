@@ -16,6 +16,7 @@ int *sommeTableaux(int taille, int *tab1, int *tab2) {
 
 int main() {
     int taille;
+    printf("\nEntrer la taille de tableau:\n");
     scanf("%d", &taille); // Entrer la taille des tableaux
 
     int *tab1 = (int*)malloc(taille * sizeof(int));
@@ -30,10 +31,12 @@ int main() {
 
     // Remplissage des tableaux
     for (int i = 0; i < taille; i++) {
+        printf("Entrer la %d élement du tab1:\n",i+1);
         scanf("%d", &tab1[i]);
     }
 
     for (int i = 0; i < taille; i++) {
+        printf("Entrer la %d élement du tab2:\n",i+1);
         scanf("%d", &tab2[i]);
     }
 
@@ -41,7 +44,7 @@ int main() {
 
     // Affichage du résultat
     for (int i = 0; i < taille; i++) {
-        printf("%d", res[i]);
+        printf("%d\t", res[i]);
     }
     printf("\n");
 

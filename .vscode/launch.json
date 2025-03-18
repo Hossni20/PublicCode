@@ -23,8 +23,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/c_and_html_et_latex",
-      "program": "d:/c_and_html_et_latex/build/Debug/outDebug",
+      "cwd": "d:/c_and_html_et_latex/C this semester",
+      "program": "d:/c_and_html_et_latex/C this semester/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
