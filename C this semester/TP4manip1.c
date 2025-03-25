@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+
 int **allouerMatrice(int nl, int nc) {
     int **matrice = (int **)malloc(nl * sizeof(int *)); // LES ADRESSES
     if (matrice == NULL) {
@@ -14,6 +16,8 @@ int **allouerMatrice(int nl, int nc) {
     }
     return matrice;
 }
+
+
 void remplirMatrice(int **matrice, int nl, int nc) {
     for (int i = 0; i < nl; i++) {
         for (int j = 0; j < nc; j++) {
@@ -22,6 +26,8 @@ void remplirMatrice(int **matrice, int nl, int nc) {
         }
     }
 }
+
+
 void afficherMatrice(int **matrice, int nl, int nc) {
     printf("\nMatrice :\n");
     for (int i = 0; i < nl; i++) {
@@ -31,12 +37,16 @@ void afficherMatrice(int **matrice, int nl, int nc) {
         printf("\n");
     }
 }
+
+
 void free_matrix(int **matrice, int nl) {
     for (int i = 0; i < nl; i++) {
         free(matrice[i]); //les entiers
     }
     free(matrice); //les adresses
 }
+
+
 int main() {
     int nl, nc;
     printf("\nEntrez le nombre de lignes : ");
