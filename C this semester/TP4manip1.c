@@ -6,12 +6,12 @@
 int **allouerMatrice(int nl, int nc) {
     int **matrice = (int **)malloc(nl * sizeof(int *)); // LES ADRESSES
     if (matrice == NULL) {
-        return 1;
+        return NULL; // NULL pour poiteurs
     }
     for (int i = 0; i < nl; i++) {
         matrice[i] = (int *)malloc(nc * sizeof(int)); // LES ENTIERS
         if (matrice[i] == NULL) {
-            return 1;
+            return NULL; // NULL pour pointeurs
         }
     }
     return matrice;
