@@ -1,14 +1,14 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
-void SupprimerNegatives(float *T1,float *T2, int *N, int *M){
+void SupprimerNegatives(float *T1,float T2, int N){
 int M=0;
 for(int i=0;i<N;i++){
     if(*(T1+i)<0){
         M++;
     }
 }
-float T2 = (float)realloc(T2,M*sizeof(float));
+float *T2 = (float*)realloc(T2,M*sizeof(float));
 if(T2==NULL){
     exit(1);
 }

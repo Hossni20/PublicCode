@@ -2,66 +2,64 @@
 #include <stdlib.h>
 
 void SupprimerNegatives(float **T1, float **T2, int *N, int *M) {
-    *M = 0;
+    int n = *N;
+    float *tempPos = malloc(n * sizeof(float));
+    float *tempNeg = malloc(n * sizeof(float));
+    int posCount = 0, negCount = 0;
 
-    // Compter les éléments négatifs
-    for (int i = 0; i < *N; i++) {
+    for (int i = 0; i < n; i++) {
         if ((*T1)[i] < 0) {
-            (*M)++;
+            tempNeg[negCount++] = (*T1)[i];
+        } else {
+            tempPos[posCount++] = (*T1)[i];
         }
     }
 
-    // Allouer T2 et remplir avec les négatifs
-    *T2 = malloc(*M * sizeof(float));
-    int pos = 0;
-    for (int i = 0; i < *N; i++) {
-        if ((*T1)[i] < 0) {
-            (*T2)[pos++] = (*T1)[i];
-        }
-    }
+    *T1 = realloc(tempPos, posCount * sizeof(float));
+    *T2 = realloc(tempNeg, negCount * sizeof(float));
 
-    // Réduire T1 pour ne garder que les non-négatifs
-    float *T1_temp = malloc((*N - *M) * sizeof(float));
-    pos = 0;
-    for (int i = 0; i < *N; i++) {
-        if ((*T1)[i] >= 0) {
-            T1_temp[pos++] = (*T1)[i];
-        }
-    }
-
-    free(*T1);
-    *T1 = T1_temp;
-    *N = *N - *M;
+    *N = posCount;
+    *M = negCount;
 }
 
 int main() {
-    int N, M;
-    float *T1 = NULL, *T2 = NULL;
-
-    printf("Taille du tableau : ");
+    int N;
+    printf("Saisir la taille du tableau:\n");
     scanf("%d", &N);
 
-    T1 = malloc(N * sizeof(float));
-    if (!T1) return 1;
+    float *TableauT1 = malloc(N * sizeof(float));
+    float *TableauT2 = NULL;
 
-    for (int i = 0; i < N; i++) {
-        printf("Valeur %d : ", i + 1);
-        scanf("%f", &T1[i]);
+    if (TableauT1 == NULL) {
+        fprintf(stderr, "Erreur d'allocation\n");
+        exit(1);
     }
 
-    SupprimerNegatives(&T1, &T2, &N, &M);
-
-    printf("\nValeurs positives ou nulles :\n");
     for (int i = 0; i < N; i++) {
-        printf("%.2f\t", T1[i]);
+        printf("Saisir le nombre #%d: ", i + 1);
+        scanf("%f", &TableauT1[i]);
     }
 
-    printf("\nValeurs négatives :\n");
+    printf("\nTableau original:\n");
+    for (int i = 0; i < N; i++) {
+        printf("%.2f\t", TableauT1[i]);
+    }
+    printf("\n");
+
+    int M;
+    SupprimerNegatives(&TableauT1, &TableauT2, &N, &M);
+
+    printf("\nValeurs positives ou nulles:\n");
+    for (int i = 0; i < N; i++) {
+        printf("%.2f\t", TableauT1[i]);
+    }
+
+    printf("\nValeurs negatives:\n");
     for (int i = 0; i < M; i++) {
-        printf("%.2f\t", T2[i]);
+        printf("%.2f\t", TableauT2[i]);
     }
 
-    free(T1);
-    free(T2);
+    free(TableauT1);
+    free(TableauT2);
     return 0;
 }

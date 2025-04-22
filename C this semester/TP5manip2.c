@@ -3,12 +3,12 @@
 #include <stdlib.h>
 
 char **allouerTableau(int nl, int nc) {
-    char **Tableau = (char **)malloc(nl * sizeof(char *)); // LES ADRESSES
+    char **Tableau = (char **)malloc(nl * sizeof(char *)); // LES ADRESSES kamlin fihom les adresses wajdin
     if (Tableau == NULL) {
         return NULL;
     }
     for (int i = 0; i < nl; i++) {
-        Tableau[i] = (char *)malloc(nc * sizeof(char)); // LES ENTIERS
+        Tableau[i] = (char *)malloc(nc * sizeof(char)); // LES ENTIERS kan allocatiw o kan3mrou manuellement
         if (Tableau[i] == NULL) {
             return NULL;
         }
