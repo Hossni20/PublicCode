@@ -10,6 +10,9 @@ typedef struct {
 #define MAX 100
 Etudiant *Liste_Etudiant[MAX];  
 int nb_etd = 0;
+
+
+
 void ajouterEtudiant(){
     if(nb_etd>=100) exit(1);
     else{ 
@@ -22,6 +25,9 @@ void ajouterEtudiant(){
     }
         }
 }
+
+
+
 void supprimerEtudiant() {
     char nom[30];
     char prenom[30];
@@ -43,10 +49,13 @@ void supprimerEtudiant() {
             break;
         }
     }
-    if (!found) {
+        if (!found) {
         printf("Étudiant non trouvé.\n");
     }
 }
+
+
+
 void modifierEtudiant() {
     char nom[20];
     char prenom[20];
@@ -71,6 +80,10 @@ void modifierEtudiant() {
         printf("Étudiant non trouvé.\n");
     }
 }
+
+
+
+
 void afficherTous() {
     if (nb_etd == 0) {
         printf("Aucun étudiant enregistré.\n");
@@ -86,6 +99,10 @@ void afficherTous() {
         printf("-------------------------\n");
     }
 }
+
+
+
+
 int main() {
     int input;
     while(1){
@@ -114,9 +131,9 @@ else {
         default:
             printf("Invalid Input.\n");
                      }
-        }
+    }
+}
 
-                }
 for (int i = 0; i < nb_etd; i++) {
     free(Liste_Etudiant[i]);
 }
