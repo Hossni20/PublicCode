@@ -4,12 +4,11 @@
 
 
 int** allouerMatrice(int nl, int nc) {
-    int **matrice = malloc(nl * sizeof(int *)); // Allocate rows (adresses)
-    if (matrice == NULL) {
-        exit(1);
-    }
+    int** matrice = malloc(nl * sizeof(int *)); // Allocate rows (adresses)
+    if (matrice == NULL) exit(1);
+
     for (int i = 0; i < nl; i++) {              // the tables have Nb.Col of bits but its limited to the numbers of adresses
-        *(matrice+i) = malloc(nc * sizeof(int)); // Allocate columns for each row
+        matrice[i] = malloc(nc * sizeof(int));  // Allocate columns for each row
         if (matrice[i] == NULL) {               // "NULL" means it doesn't point to nothing
             
             for (int j = 0; j < i; j++) {
