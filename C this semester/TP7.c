@@ -113,25 +113,25 @@ int main() {
         printf("3.Modifier La Note\n");
         printf("4.AfficherTous\n");
         scanf("%d", &input);
-if (input == 0) break;
-else {
-    switch(input) {
-        case 1:
-            ajouterEtudiant();
-            break;
-        case 2:
-            supprimerEtudiant();
-            break;
-        case 3:
-            modifierEtudiant();
-            break;
-        case 4:
-            afficherTous();
-            break;
-        default:
-            printf("Invalid Input.\n");
-                     }
-    }
+        if (input == 0) break;
+        else {
+            switch(input) {
+                case 1:
+                ajouterEtudiant();
+                break;
+                case 2:
+                supprimerEtudiant();
+                break;
+                case 3:
+                modifierEtudiant();
+                break;
+                case 4:
+                afficherTous();
+                break;
+                default:
+                printf("Invalid Input.\n");
+}
+}
 }
 
 for (int i = 0; i < nb_etd; i++) {

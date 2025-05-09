@@ -61,5 +61,28 @@
     "D:/c_and_html_et_laTex/Cargo.toml"
   ],
   "C_Cpp_Runner.enableWarnings": true,
-  "C_Cpp_Runner.warningsAsError": false
+  "C_Cpp_Runner.warningsAsError": false,
+  "go.useLanguageServer": true,
+  "go.formatTool": "goimports",
+  "go.lintTool": "staticcheck",
+  "go.testFlags": [
+    "-v"
+  ],
+  "go.toolsEnvVars": {
+    "GO111MODULE": "on"
+  },
+  "gopls": {
+    "usePlaceholders": true,
+    "completeUnimported": true,
+    "staticcheck": true
+  },
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "go.buildOnSave": "package",
+  "go.lintOnSave": "package",
+  "go.vetOnSave": "package"
 }

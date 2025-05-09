@@ -38,9 +38,9 @@ int main() {
     // for char (%s) it gives segmentation fault
 
 
-    char *ptr = malloc(10*sizeof(char));
+    char *ptr = malloc(3*sizeof(char));
     if (ptr==NULL) return 1;
-    for(int i=0;i<10;i++){
+    for(int i=0;i<3;i++){
         printf(" %c\n",ptr[i]);
     }
     free(ptr);              // it frees the pointer so its doesn't point to nothing and gives the NULL
@@ -57,5 +57,9 @@ int main() {
     }
     else
     printf("Substring not found\n");
+
+
+    char names[12] = "dog and cat";
+    printf("%d",strlen(names)); // strlen does count spaces it outputs 11 (12 - \0 = 11)
     return 0;
 }

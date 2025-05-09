@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int *sommeTableaux(int taille, int *tab1, int *tab2) {
+int* sommeTableaux(int taille, int *tab1, int *tab2) {
     int *res = (int*)malloc(taille * sizeof(int));
     if (res == NULL) {
         printf("Erreur d'allocation mémoire\n");
-        exit(EXIT_FAILURE);
+        exit(1);
     }
 
     for (int i = 0; i < taille; i++) {
@@ -19,14 +19,14 @@ int main() {
     printf("\nEntrer la taille de tableau:\n");
     scanf("%d", &taille); // Entrer la taille des tableaux
 
-    int *tab1 = (int*)malloc(taille * sizeof(int));
-    int *tab2 = (int*)malloc(taille * sizeof(int));
+    int *tab1 = malloc(taille * sizeof(int));
+    int *tab2 = malloc(taille * sizeof(int));
 
     if (tab1 == NULL || tab2 == NULL) {
         printf("Erreur d'allocation mémoire\n");
         free(tab1);
         free(tab2);
-        return EXIT_FAILURE;
+        return 1;
     }
 
     // Remplissage des tableaux

@@ -42,7 +42,7 @@ int main() {
     printf("+----------------+--------------+--------+------------+------+\n");
 
     for (int i = 0; i < 5; i++) {
-        printf("| %-14s | %-12s | %6.2f | %-10s | %4d |\n",
+        printf("| %s | %s | %6.2f | %s | %4d |\n",
                vt[i].marque, vt[i].Tcarburant, vt[i].prix, vt[i].m.mois, vt[i].m.an);
     }
 
