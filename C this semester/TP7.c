@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>  
+
+
+
 typedef struct {
     char nom[20];
     char prenom[20];
