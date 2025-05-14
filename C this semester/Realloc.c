@@ -5,7 +5,7 @@ int main() {
     int capacity = 4; // capacité initiale
     int size = 0;     // nombre réel d'éléments
     int input;
-    int *table = malloc(capacity * sizeof(int)); // allocation initiale
+    int* table = malloc(capacity * sizeof(int)); // allocation initiale
 
     if (table == NULL) {
         printf("Erreur d'allocation mémoire.\n");

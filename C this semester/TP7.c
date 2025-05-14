@@ -9,21 +9,24 @@ typedef struct {
     float resultat;
 } Etudiant;
 #define MAX 100
-Etudiant *Liste_Etudiant[MAX];  
+Etudiant* Liste_Etudiant[MAX];  
 int nb_etd = 0;
 
 
 
 void ajouterEtudiant(){
-    if(nb_etd>=100) exit(1);
+
+    if (nb_etd>=100) exit(1);
+
     else{ 
-    Liste_Etudiant[nb_etd]=(Etudiant*)malloc(sizeof(Etudiant));
-    if(Liste_Etudiant[nb_etd]==NULL) exit(1);
-    else{
-        printf("1er est le Nom, la 2éme est le prénom, La 3éme est L'age, La 4éme est la résultat\n");
-        scanf(" %s %s %d %f",Liste_Etudiant[nb_etd]->nom,Liste_Etudiant[nb_etd]->prenom,&Liste_Etudiant[nb_etd]->age,&Liste_Etudiant[nb_etd]->resultat);
-        nb_etd++;
-    }
+    Liste_Etudiant[nb_etd]=malloc(sizeof(Etudiant));
+            if(Liste_Etudiant[nb_etd]==NULL) exit(1);
+            
+                else{
+                    printf("1er est le Nom, la 2éme est le prénom, La 3éme est L'age, La 4éme est la résultat\n");
+                    scanf(" %s %s %d %f",Liste_Etudiant[nb_etd]->nom,Liste_Etudiant[nb_etd]->prenom,&Liste_Etudiant[nb_etd]->age,&Liste_Etudiant[nb_etd]->resultat);
+                    nb_etd++;
+                    }
         }
 }
 
