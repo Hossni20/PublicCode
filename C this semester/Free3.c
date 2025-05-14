@@ -4,16 +4,17 @@
 #include <strings.h>
 
 int* SommeTableaux(int* T1,int* T2,int taille){         // taille doesn't need a pointer because it doesn't need to change
-    int* res = malloc(taille*sizeof(int));              // it returns a table so it needs a pointer to return res by its values
-    if (res == NULL)                                    // whithout the tidious task to pass by value
-    {
+     int* res = malloc(taille*sizeof(int));              // it returns a table so it needs a pointer to return res by its values
+     if (res == NULL)                                    // whithout the tidious task to pass by value
+     {
         exit(1);
-    }
-    for(int i=0;i<taille;i++){
+     }
+     for(int i=0;i<taille;i++){
         res[i] = T1[i] + T2[i];
-    }
-    return res;
+     }
+     return res;
 }
+
 int main(){
 
 int taille;
@@ -38,7 +39,7 @@ for(int i=0;i<taille;i++){
     scanf("%d",T2+i);
 }
 
-int* res = SommeTableaux(T1,T2,taille);                 // it returns a pointer for res and the type of an "int"
+int* res = SommeTableaux(T1,T2,taille);                 // it returns a pointer for res and the type of an "int*"
 
 for(int i=0;i<taille;i++){
     printf("%d\t",*(res+i));

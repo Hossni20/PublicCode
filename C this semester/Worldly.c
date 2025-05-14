@@ -1,0 +1,1 @@
+/*this is an idea of a game that you guess a random word of a specified number of letters and you have the exact same tries as the numbers*/

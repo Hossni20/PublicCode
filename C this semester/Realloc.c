@@ -14,6 +14,7 @@ int main() {
 
     printf("Entrez des nombres (0 pour terminer) :\n");
     while (1) {
+        
         scanf("%d", &input);
         if (input == 0)
             break;
@@ -21,7 +22,7 @@ int main() {
         if (size == capacity) {
             // doubler la capacité
             capacity *= 2;
-            int *temp = realloc(table, capacity * sizeof(int));
+            int* temp = realloc(table, capacity * sizeof(int));
             if (temp == NULL) {
                 printf("Erreur de reallocation mémoire.\n");
                 free(table);
@@ -30,7 +31,7 @@ int main() {
             table = temp;
         }
 
-        *(table + size) = input;
+        table[size] = input;
         size++;
     }
 
