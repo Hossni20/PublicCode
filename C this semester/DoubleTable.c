@@ -10,7 +10,7 @@ int** allouermatrice(int nl,int nc){
         exit(1);
     }
     for(int i=0;i<nl;i++){
-        *(matrice+i)=malloc(nc*sizeof(int));
+        *(matrice+i)=malloc(nc*sizeof(int));        // matrice[i]
         if( *(matrice+i)==NULL ){                 // you should check every table so you should write "matrice[i]" not "matrice"
             for(int j=0;j<i;j++){               // " j < nc " checks the same colonne again and again, you should check matrice[0] to matrice[i-1]
                 free(*(matrice+i));             // Iterate through previously allocated rows
